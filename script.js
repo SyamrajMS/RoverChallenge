@@ -13,28 +13,100 @@ if ('scrollRestoration' in history) {
 window.scrollTo(0, 0);
 
 // ========== AMBIENT SPACE AUDIO ENGINE ==========
+let audioContext = null;
 let audioPlaying = false;
-const bgMusic = document.getElementById('bg-music');
+let masterGain = null;
+let sequenceInterval = null;
 
-// Set volume slightly lower
-if (bgMusic) {
-    bgMusic.volume = 0.5;
+function initAudio() {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    masterGain = audioContext.createGain();
+    masterGain.gain.value = 0;
+    masterGain.connect(audioContext.destination);
+    
+    // Ambient Pad
+    function createPad(freq) {
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        const filter = audioContext.createBiquadFilter();
+        
+        osc.type = 'sawtooth';
+        osc.frequency.value = freq;
+        
+        filter.type = 'lowpass';
+        filter.frequency.value = 400;
+        
+        gain.gain.value = 0.03;
+        
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(masterGain);
+        osc.start();
+        
+        // Slow filter sweep
+        const lfo = audioContext.createOscillator();
+        const lfoGain = audioContext.createGain();
+        lfo.frequency.value = 0.1;
+        lfoGain.gain.value = 200;
+        lfo.connect(lfoGain);
+        lfoGain.connect(filter.frequency);
+        lfo.start();
+    }
+    
+    createPad(110); // A2
+    createPad(164.81); // E3
+    createPad(220); // A3
+    
+    // Space Arpeggiator
+    const notes = [220, 261.63, 329.63, 440, 329.63, 261.63]; // A minor pentatonic
+    let noteIndex = 0;
+    
+    function playNote() {
+        if (!audioPlaying) return;
+        
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        const filter = audioContext.createBiquadFilter();
+        
+        osc.type = 'square';
+        osc.frequency.value = notes[noteIndex];
+        
+        filter.type = 'lowpass';
+        filter.frequency.value = 1200;
+        
+        gain.gain.setValueAtTime(0, audioContext.currentTime);
+        gain.gain.linearRampToValueAtTime(0.05, audioContext.currentTime + 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.3);
+        
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(masterGain);
+        
+        osc.start();
+        osc.stop(audioContext.currentTime + 0.3);
+        
+        noteIndex = (noteIndex + 1) % notes.length;
+    }
+    
+    sequenceInterval = setInterval(playNote, 250); // 240 BPM eighth notes
 }
 
 function startAudio() {
-    if (bgMusic) {
-        bgMusic.play().catch(e => console.warn("Audio autoplay prevented", e));
-        audioPlaying = true;
-        updateAudioButton();
-    }
+    if (!audioContext) initAudio();
+    if (audioContext.state === 'suspended') audioContext.resume();
+    
+    masterGain.gain.cancelScheduledValues(audioContext.currentTime);
+    masterGain.gain.linearRampToValueAtTime(0.6, audioContext.currentTime + 1);
+    audioPlaying = true;
+    updateAudioButton();
 }
 
 function stopAudio() {
-    if (bgMusic) {
-        bgMusic.pause();
-        audioPlaying = false;
-        updateAudioButton();
-    }
+    if (!masterGain) return;
+    masterGain.gain.cancelScheduledValues(audioContext.currentTime);
+    masterGain.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.5);
+    audioPlaying = false;
+    updateAudioButton();
 }
 
 function toggleAudio() {
