@@ -677,6 +677,26 @@ function onPlayerReady(event) {
     if (typeof event.target.setPlaybackQuality === 'function') {
         event.target.setPlaybackQuality('medium'); // 360p
     }
+    
+    // Fail-safe: if player finished loading after user scrolled away, pause it.
+    try {
+        const iframe = event.target.getIframe();
+        if (iframe) {
+            const item = iframe.closest('.video-item');
+            if (!item || !item.classList.contains('active')) {
+                event.target.pauseVideo();
+            } else {
+                const gallery = document.querySelector('.video-gallery-container');
+                if (gallery) {
+                    const rect = gallery.getBoundingClientRect();
+                    // If gallery is out of viewport
+                    if (rect.top > window.innerHeight || rect.bottom < 0) {
+                        event.target.pauseVideo();
+                    }
+                }
+            }
+        }
+    } catch(e) {}
 }
 
 function onPlayerStateChange(event) {
@@ -696,11 +716,8 @@ function onPlayerStateChange(event) {
 function pauseAllVideos() {
     ytPlayers.forEach(player => {
         try {
-            if (typeof player.pauseVideo === 'function' && typeof player.getPlayerState === 'function') {
-                const state = player.getPlayerState();
-                if (state === YT.PlayerState.PLAYING || state === YT.PlayerState.BUFFERING) {
-                    player.pauseVideo();
-                }
+            if (typeof player.pauseVideo === 'function') {
+                player.pauseVideo();
             }
         } catch (e) {}
     });
