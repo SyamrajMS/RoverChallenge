@@ -827,3 +827,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// ========== PRIZE POOL ANIMATION ==========
+document.addEventListener('DOMContentLoaded', () => {
+    const prizeElement = document.getElementById('prize-pool-amount');
+    if (!prizeElement) return;
+
+    const target = parseInt(prizeElement.getAttribute('data-target'), 10) || 1200;
+    let animated = false;
+
+    const animateNumber = (element, end, duration) => {
+        let start = 0;
+        const increment = end / (duration / 16); // roughly 60fps
+        const timer = setInterval(() => {
+            start += increment;
+            if (start >= end) {
+                element.innerText = end.toLocaleString();
+                clearInterval(timer);
+            } else {
+                element.innerText = Math.floor(start).toLocaleString();
+            }
+        }, 16);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animated) {
+                animated = true;
+                animateNumber(prizeElement, target, 2000); // 2 seconds animation
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(prizeElement);
+});

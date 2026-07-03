@@ -15,26 +15,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .nav-link { color: #0f172a !important; }
-        .hamburger span { background-color: #0f172a !important; }
-    </style>
 </head>
 <body class="bg-space-950 text-slate-900 font-body overflow-x-hidden">
 
-    <!-- Navigation (Simplified for subpages) -->
-       <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-200 transition-all duration-500">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <a href="/" class="flex items-center gap-3 group" id="nav-logo">
                     <img src="assets/images/logo.png" alt="ASRC Logo" class="h-10 w-auto">
                     <div class="hidden sm:block">
-                        <p class="font-display text-sm font-bold text-slate-900 leading-none tracking-wider">ASIAN ROVER</p>
+                        <p class="font-display text-sm font-bold text-white leading-none tracking-wider">ASIAN ROVER
+                        </p>
                         <p class="font-display text-xs text-neon-cyan tracking-[0.25em]">CHALLENGE</p>
                     </div>
                 </a>
-                
+
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-1" id="nav-menu">
                     <a href="/" class="nav-link active" data-section="home">Home</a>
@@ -48,7 +45,7 @@
                         <span class="relative z-10 font-display text-xs tracking-wider">REGISTER NOW</span>
                     </a>
                 </div>
-                
+
                 <!-- Mobile Menu Toggle -->
                 <button id="mobile-toggle" class="md:hidden relative w-10 h-10 flex items-center justify-center z-[60]">
                     <div class="hamburger">
@@ -59,17 +56,23 @@
                 </button>
             </div>
         </div>
-        
+
         <!-- Mobile Menu - Fixed fullscreen overlay -->
         <div id="mobile-menu" class="md:hidden mobile-menu-overlay">
             <div class="flex flex-col items-center justify-center h-full gap-6 px-8">
-                <a href="/" class="mobile-nav-link font-display text-2xl tracking-wider" onclick="closeMobileMenu()">HOME</a>
-                <a href="/#about" class="mobile-nav-link font-display text-2xl tracking-wider" onclick="closeMobileMenu()">ABOUT</a>
-                <a href="/#challenges" class="mobile-nav-link font-display text-2xl tracking-wider" onclick="closeMobileMenu()">CHALLENGES</a>
-                <a href="/#timeline" class="mobile-nav-link font-display text-2xl tracking-wider" onclick="closeMobileMenu()">TIMELINE</a>
-                <a href="/#venue" class="mobile-nav-link font-display text-2xl tracking-wider" onclick="closeMobileMenu()">VENUE</a>
-                <a href="/#sponsors" class="mobile-nav-link font-display text-2xl tracking-wider" onclick="closeMobileMenu()">SPONSORS</a>
-                <a href="/#register" class="register-btn mt-4" onclick="closeMobileMenu()">
+                <a href="/" class="mobile-nav-link font-display text-2xl tracking-wider"
+                    onclick="closeMobileMenu()">HOME</a>
+                <a href="/#about" class="mobile-nav-link font-display text-2xl tracking-wider"
+                    onclick="closeMobileMenu()">ABOUT</a>
+                <a href="#challenges" class="mobile-nav-link font-display text-2xl tracking-wider"
+                    onclick="closeMobileMenu()">CHALLENGES</a>
+                <a href="#timeline" class="mobile-nav-link font-display text-2xl tracking-wider"
+                    onclick="closeMobileMenu()">TIMELINE</a>
+                <a href="#venue" class="mobile-nav-link font-display text-2xl tracking-wider"
+                    onclick="closeMobileMenu()">VENUE</a>
+                <a href="#sponsors" class="mobile-nav-link font-display text-2xl tracking-wider"
+                    onclick="closeMobileMenu()">SPONSORS</a>
+                <a href="#register" class="register-btn mt-4" onclick="closeMobileMenu()">
                     <span class="btn-glow"></span>
                     <span class="relative z-10 font-display text-sm tracking-wider">REGISTER NOW</span>
                 </a>
@@ -160,92 +163,141 @@
                 <ul class="list-disc pl-6 space-y-2 mb-8">
                     <li>By email: <a href="mailto:contact@asrc.space" class="text-neon-cyan font-semibold hover:underline">contact@asrc.space</a></li>
                 </ul>
-    <footer class="relative z-30 border-t border-white/5 backdrop-blur-xl">
+            </div>
+        </div>
+
+    </main>
+    <!-- FOOTER -->
+    <footer class="relative z-30 border-t border-white/5 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid md:grid-cols-4 gap-12">
                 <!-- Brand -->
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-6">
-                        <img src="assets/images/logo.png" alt="ASRC Logo" class="h-10 w-auto">
+                        <img src="assets/images/logo.png" alt="ASRC Logo" class="h-12 w-auto">
                         <div>
-                            <p class="font-display text-sm font-bold text-slate-900 leading-none tracking-wider">ASIAN ROVER</p>
+                            <p class="font-display text-sm font-bold text-white leading-none tracking-wider">ASIAN
+                                ROVER</p>
                             <p class="font-display text-xs text-neon-cyan tracking-[0.25em]">CHALLENGE 2026</p>
                         </div>
                     </div>
-                    <h4>Where Tomorrow's Robotics Leaders Begin</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed max-w-md mb-6 mt-2">
-                        The Robotic Systems Integrators Association (RISA) is an international robotics organization fostering excellence in engineering, autonomous systems, and space technologies. By organizing global competitions, educational initiatives, research collaborations, and innovation programs, we empower students and professionals to design, build, and deploy technologies that shape humanity's future—on Earth and beyond.
-                    <br><br>Whether you're building your first robot or preparing for the next Mars mission, RISA is where innovation finds its community.
+                    <h4 class="text-white font-semibold mb-2">Where Tomorrow's Robotics Leaders Begin</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-md mb-6">
+                        The Robotic Systems Integrators Association (RISA) is an international robotics organization
+                        fostering excellence in engineering, autonomous systems, and space technologies. By organizing
+                        global competitions, educational initiatives, research collaborations, and innovation programs,
+                        we empower students and professionals to design, build, and deploy technologies that shape
+                        humanity's future—on Earth and beyond.
+                        <br><br>Whether you're building your first robot or preparing for the next Mars mission, RISA is
+                        where innovation finds its community.
                     </p>
                     <div class="flex items-center gap-4">
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        <a href="#" class="social-link text-gray-400 hover:text-neon-cyan transition-colors"
+                            aria-label="LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        <a href="#" class="social-link text-gray-400 hover:text-neon-cyan transition-colors"
+                            aria-label="YouTube">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
                         </a>
                     </div>
-                    
+
                     <div class="mt-8">
-                        <p class="font-display text-xs font-bold text-slate-900 tracking-wider mb-3">SUPPORTED BY</p>
+                        <p class="font-display text-xs font-bold text-white tracking-wider mb-3">SUPPORTED BY</p>
                         <div class="flex items-center gap-4">
-                            <a href="https://mace.ac.in" target="_blank" class="block transition-transform hover:scale-105">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQyF91oEO_gPfTdEySx3Sjma-KdiVgl5k-SsI_r-FD_A&s" alt="MACE" class="h-10 w-auto rounded">
+                            <a href="https://joinrisa.org" target="_blank"
+                                class="block transition-transform hover:scale-105">
+                                <img src="./assets/images/risa.png" alt="RISA" class="h-12 w-auto rounded">
+                            </a>
+
+                            <a href="https://mace.ac.in" target="_blank"
+                                class="block transition-transform hover:scale-105">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQyF91oEO_gPfTdEySx3Sjma-KdiVgl5k-SsI_r-FD_A&s"
+                                    alt="MACE" class="h-10 w-auto rounded">
                             </a>
                         </div>
+
                     </div>
                 </div>
-                
+
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="font-display text-sm font-bold text-slate-900 tracking-wider mb-6">QUICK LINKS</h4>
+                    <h4 class="font-display text-sm font-bold text-white tracking-wider mb-6">QUICK LINKS</h4>
                     <ul class="space-y-3">
-                        <li><a href="/#about" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">About ASRC</a></li>
-                        <li><a href="/#challenges" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">ASRC Challenge</a></li>
-                        <li><a href="https://www.joinrisa.org" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">About RISA</a></li>
-                        <li><a href="https://mace.ac.in" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">About MACE</a></li>
-                        <li><a href="/#register" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">Register</a></li>
-                        <li><a href="#" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">Join The Dicord</a></li>
-                        <li><a href="https://docs.google.com/document/d/1nAl5XEtAJQb5udgHfqcTJPMl98wXMcKey6zJIa9h5WI/edit?usp=drive_link" target="blank" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">Event Policy</a></li>
+                        <li><a href="#about" class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">About
+                                ASRC</a></li>
+                        <li><a href="#challenges"
+                                class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">ASRC Challenge</a>
+                        </li>
+                        <li><a href="https://www.joinrisa.org"
+                                class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">About RISA</a></li>
+                        <li><a href="https://mace.ac.in"
+                                class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">About MACE</a></li>
+                        <li><a href="#register"
+                                class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">Register</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">Join The
+                                Dicord</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Contact -->
                 <div>
-                    <h4 class="font-display text-sm font-bold text-slate-900 tracking-wider mb-6">CONTACT</h4>
+                    <h4 class="font-display text-sm font-bold text-white tracking-wider mb-6">CONTACT</h4>
                     <ul class="space-y-3">
                         <li>
-                            <a href="mailto:contact@asrc.space" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <a href="mailto:contact@asrc.space"
+                                class="text-gray-400 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
                                 contact@asrc.space
                             </a>
                         </li>
                         <li>
-                            <span class="text-gray-500 text-sm flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <span class="text-gray-400 text-sm flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
                                 MACE, Kothamangalam, Kerala
                             </span>
                         </li>
                         <li>
-                            <a href="https://joinrisa.org" target="_blank" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                            <a href="https://joinrisa.org" target="_blank"
+                                class="text-gray-400 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                </svg>
                                 RISA
                             </a>
                         </li>
                     </ul>
                     <br>
                     <div>
-                        <h4 class="font-display text-sm font-bold text-slate-900 tracking-wider mb-6">Pages</h4>
+                        <h4 class="font-display text-sm font-bold text-white tracking-wider mb-6">Pages</h4>
                         <ul class="space-y-3">
-                            <li><a href="/" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">Home</a></li>
+                            <li><a href="/"
+                                    class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">Home</a></li>
 
                             <li>
-                                <a href="terms.html" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                <a href="terms.html"
+                                    class="text-gray-400 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
                                     Terms & Conditions
                                 </a>
                             </li>
                             <li>
-                                <a href="privacy.html" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                <a href="privacy.html"
+                                    class="text-gray-400 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
                                     Privacy Policy
                                 </a>
                             </li>
@@ -254,12 +306,13 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Bottom Bar -->
         <div class="border-t border-white/5 py-6">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-gray-600 text-xs font-mono">© 2026 Asian Rover Challenge. All rights reserved.</p>
-                <p class="text-gray-700 text-xs font-mono">Hosted at MACE Kothamangalam • Powered by Srishti</p>
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-gray-500 text-xs font-mono">© 2026 Asian Rover Challenge. All rights reserved.</p>
+                <p class="text-gray-500 text-xs font-mono">Hosted at MACE Kothamangalam • Powered by Srishti</p>
             </div>
         </div>
     </footer>

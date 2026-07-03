@@ -67,11 +67,11 @@
                 <div class="hidden md:flex items-center gap-1" id="nav-menu">
                     <a href="/" class="nav-link active" data-section="home">Home</a>
                     <a href="/#about" class="nav-link" data-section="about">About</a>
-                    <a href="#challenges" class="nav-link" data-section="challenges">Challenges</a>
-                    <a href="#timeline" class="nav-link" data-section="timeline">Timeline</a>
-                    <a href="#venue" class="nav-link" data-section="venue">Venue</a>
-                    <a href="#sponsors" class="nav-link" data-section="sponsors">Sponsors</a>
-                    <a href="#register" class="register-btn ml-4">
+                    <a href="/#challenges" class="nav-link" data-section="challenges">Challenges</a>
+                    <a href="/#timeline" class="nav-link" data-section="timeline">Timeline</a>
+                    <a href="/#venue" class="nav-link" data-section="venue">Venue</a>
+                    <a href="/#sponsors" class="nav-link" data-section="sponsors">Sponsors</a>
+                    <a href="/#register" class="register-btn ml-4">
                         <span class="btn-glow"></span>
                         <span class="relative z-10 font-display text-xs tracking-wider">REGISTER NOW</span>
                     </a>
@@ -390,7 +390,7 @@
                 <!-- Right: Image with effects -->
                 <div class="about-image relative">
                     <div class="relative rounded-2xl overflow-hidden border border-white/10">
-                        <img src="assets/images/hero-rover.png" alt="Mars Rover on terrain" class="w-full h-auto">
+                        <img src="assets/images/hero-rover.jpeg" alt="Mars Rover on terrain" class="w-full h-auto">
                         <div class="absolute inset-0 bg-gradient-to-t from-space-950 via-transparent to-transparent">
                         </div>
                     </div>
@@ -456,11 +456,28 @@
         </div>
     </section>
 
+    <!-- Prize Pool Section -->
+    <div
+        class="mt-12 max-w-3xl mx-auto register-card p-8 sm:p-12 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl relative overflow-hidden">
+        <div class="flex items-center justify-center">
+
+            <!-- First Prize -->
+            <div
+                class="text-center p-12 sm:p-16 w-full rounded-2xl bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-500/40 hover:border-yellow-500/70 hover:shadow-[0_0_40px_rgba(234,179,8,0.3)] transition-all group relative flex flex-col justify-center">
+                <h4 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-4 uppercase tracking-widest">
+                    Prize Pool</h4>
+                <p
+                    class="text-7xl sm:text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 mb-4 transition-all duration-300 transform group-hover:scale-105 drop-shadow-sm">
+                    $<span id="prize-pool-amount" data-target="1200">0</span></p>
+            </div>
+        </div>
+    </div>
+
     <!-- CHALLENGES SECTION -->
     <section id="challenges" class="relative z-30 py-24 sm:py-32">
         <!-- Mars terrain background parallax -->
         <div class="absolute inset-0 z-0">
-            <img src="assets/images/mars-terrain.png" alt="" class="w-full h-full object-cover opacity-10">
+            <img src="assets/images/mars.jpeg" alt="competition image" class="w-full h-full object-cover opacity-10">
             <div class="absolute inset-0 bg-gradient-to-b from-space-950 via-space-950/80 to-space-950"></div>
         </div>
 
@@ -479,7 +496,7 @@
                 <div
                     class="grid lg:grid-cols-5 gap-0 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm overflow-hidden">
                     <div class="lg:col-span-2 relative min-h-[300px] order-2 lg:order-1">
-                        <img src="assets/images/mars-terrain.png" alt="Mars terrain"
+                        <img src="assets/images/mars.jpeg" alt="Mars terrain"
                             class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute"></div>
                     </div>
@@ -574,7 +591,7 @@
                         </div>
                     </div>
                     <div class="lg:col-span-2 relative min-h-[300px]">
-                        <img src="assets/images/teams.png" alt="Teams working on rover"
+                        <img src="assets/images/teams.jpeg" alt="Teams working on rover"
                             class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute from-space-950/80 via-transparent to-transparent lg:bg-gradient-to-l">
                         </div>
@@ -763,6 +780,7 @@
         </div>
     </section>
 
+
     <!-- REGISTRATION SECTION -->
     <section id="register" class="relative z-30 py-24 sm:py-32 overflow-hidden">
         <!-- Background effects -->
@@ -835,41 +853,10 @@
                 </p>
             </div>
 
-            <!-- Prize Pool Section -->
-            <div
-                class="mt-8 register-card p-8 sm:p-12 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl relative overflow-hidden">
-                <div class="grid sm:grid-cols-2 gap-8 relative z-10">
-                    <!-- Registration Fee -->
-                    <div
-                        class="text-center p-8 rounded-xl bg-white/40 border border-white/40 hover:border-neon-purple/50 hover:shadow-lg transition-all group flex flex-col justify-center">
-                        <h4 class="font-display text-lg font-bold text-slate-900 mb-2">Registration Fee</h4>
-                        <p
-                            class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-blue mb-2 transition-all duration-300 transform group-hover:scale-105">
-                            $120</p>
-                        <p class="text-xs text-slate-600 font-mono uppercase tracking-wider">Per Team</p>
-                    </div>
-
-                    <!-- First Prize -->
-                    <div
-                        class="text-center p-8 rounded-xl bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-500/40 hover:border-yellow-500/70 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)] transition-all group relative flex flex-col justify-center">
-                        <div
-                            class="absolute -top-3 -right-3 sm:-right-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 text-xs font-black px-4 py-1.5 rounded-full shadow-lg transform rotate-12 group-hover:scale-110 group-hover:rotate-6 transition-all z-20 border border-yellow-200 uppercase tracking-widest">
-                            Winner
-                        </div>
-                        <h4 class="font-display text-xl font-bold text-slate-900 mb-3">First Prize</h4>
-                        <p
-                            class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 mb-2 transition-all duration-300 transform group-hover:scale-105">
-                            $1,200</p>
-                        <p class="text-sm text-slate-700 font-mono uppercase tracking-wider font-semibold">Grand Prize
-                        </p>
-                    </div>
-                </div>
-            </div>
         </div>
 
     </section>
 
-    <!-- add a interactive price pool section here saying that the online registration fee is 10000rs(change it to dollars and show the us dollar), and the first price is 100000rs(in us dollars) -->
 
     <!-- MISSION CATEGORIES SECTION -->
     <section id="mission-categories" class="relative z-30 py-24 sm:py-32 bg-space-50 border-t border-slate-100">
@@ -1189,7 +1176,7 @@
                 <!-- Brand -->
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-6">
-                        <img src="assets/images/logo.png" alt="ASRC Logo" class="h-10 w-auto">
+                        <img src="assets/images/logo.png" alt="ASRC Logo" class="h-12 w-auto">
                         <div>
                             <p class="font-display text-sm font-bold text-white leading-none tracking-wider">ASIAN
                                 ROVER</p>
@@ -1206,14 +1193,16 @@
                         <br><br>Whether you're building your first robot or preparing for the next Mars mission, RISA is
                         where innovation finds its community.
                     </p>
-                    <div class="flex items-center gap-4 text-gray-300">
-                        <a href="#" class="social-link text hover:text-white transition-colors" aria-label="LinkedIn">
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="social-link text-gray-400 hover:text-neon-cyan transition-colors"
+                            aria-label="LinkedIn">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </a>
-                        <a href="#" class="social-link hover:text-white transition-colors" aria-label="YouTube">
+                        <a href="#" class="social-link text-gray-400 hover:text-neon-cyan transition-colors"
+                            aria-label="YouTube">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -1256,6 +1245,11 @@
                                 class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">Register</a></li>
                         <li><a href="#" class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">Join The
                                 Dicord</a></li>
+                        <li>
+                            <a href="/faq.html" class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">
+                                FAQ
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
