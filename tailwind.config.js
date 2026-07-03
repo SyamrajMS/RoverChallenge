@@ -49,7 +49,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        'display': ['Orbitron', 'sans-serif'],
+        'display': ['Poppins', 'sans-serif'],
         'body': ['Inter', 'sans-serif'],
         'mono': ['JetBrains Mono', 'monospace'],
       }

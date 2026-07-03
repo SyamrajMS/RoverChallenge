@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
     <!-- GSAP -->
@@ -50,14 +50,14 @@
     <canvas id="starfield" class="fixed inset-0 z-0 pointer-events-none"></canvas>
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <a href="/" class="flex items-center gap-3 group" id="nav-logo">
                     <img src="assets/images/logo.png" alt="ASRC Logo" class="h-10 w-auto">
                     <div class="hidden sm:block">
-                        <p class="font-display text-sm font-bold text-slate-900 leading-none tracking-wider">ASIAN ROVER
+                        <p class="font-display text-sm font-bold text-white leading-none tracking-wider">ASIAN ROVER
                         </p>
                         <p class="font-display text-xs text-neon-cyan tracking-[0.25em]">CHALLENGE</p>
                     </div>
@@ -123,90 +123,135 @@
         <div class="absolute inset-0 z-15 grid-overlay opacity-10"></div>
 
         <!-- Hero Content -->
-        <div class="relative z-30 text-center py-20 px-4 max-w-6xl mx-auto">
-            <!-- Tagline -->
-            <div
-                class="hero-tag inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-cyan/30 bg-neon-cyan/5 backdrop-blur-sm mb-8">
-                <span class="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span>
-                <span class="font-mono text-xs text-neon-cyan tracking-widest uppercase">Season 2026 • MACE
-                    Kothamangalam</span>
+        <div
+            class="relative z-30 py-24 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8">
+
+            <!-- Left Side: Header Content -->
+            <div class="text-left w-full lg:w-1/2">
+                <!-- Tagline -->
+                <div
+                    class="hero-tag inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-cyan/30 bg-neon-cyan/5 backdrop-blur-sm mb-8">
+                    <span class="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span>
+                    <span class="font-mono text-xs text-neon-cyan tracking-widest uppercase">Season 2026 • MACE
+                        Kothamangalam</span>
+                </div>
+
+                <!-- Main Title -->
+                <h1 class="hero-title font-display font-black leading-none mb-6">
+                    <span
+                        class="block text-4xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8xl text-slate-900 hero-line-1">ASIAN</span>
+                    <span
+                        class="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple hero-line-2">ROVER</span>
+                    <span
+                        class="block text-4xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8xl text-slate-900 hero-line-3">CHALLENGE</span>
+                </h1>
+
+                <!-- Subtitle with dynamic text -->
+                <p class="hero-subtitle font-mono text-lg sm:text-xl text-gray-500 max-w-xl mb-8 leading-relaxed">
+                    Global Space Robotics Competition<br class="hidden sm:block">
+                    <span class="text-mars-500 font-semibold dynamic-tagline" id="dynamic-tagline">Design. Build.
+                        Conquer Mars.</span>
+                </p>
+
+                <!-- Rotating Words Bar -->
+                <div class="hero-word-rotator mb-10 overflow-hidden h-8 flex items-center justify-start">
+                    <span class="font-mono text-sm text-neon-cyan/60 tracking-widest">[&nbsp;</span>
+                    <span id="rotating-word"
+                        class="font-mono text-sm text-neon-cyan tracking-widest inline-block min-w-[200px]"></span>
+                    <span class="font-mono text-sm text-neon-cyan/60 tracking-widest">&nbsp;]</span>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta flex flex-col sm:flex-row items-center justify-start gap-4">
+                    <a href="#register" class="primary-cta group">
+                        <span class="cta-bg"></span>
+                        <span class="relative z-10 flex items-center gap-2 font-display text-sm tracking-wider">
+                            REGISTER YOUR TEAM
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#mission-categories"
+                        class="secondary-cta font-display text-sm tracking-wider text-gray-500">
+                        EXPLORE MISSIONS
+                    </a>
+                </div>
             </div>
 
-            <!-- Main Title -->
-            <h1 class="hero-title font-display font-black leading-none mb-6">
-                <span class="block text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-slate-900 hero-line-1">ASIAN</span>
-                <span
-                    class="block text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple hero-line-2">ROVER</span>
-                <span
-                    class="block text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-slate-900 hero-line-3">CHALLENGE</span>
-            </h1>
-
-            <!-- Subtitle with dynamic text -->
-            <p
-                class="hero-subtitle font-mono text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-                Global Space Robotics Competition<br class="hidden sm:block">
-                <span class="text-mars-300 dynamic-tagline" id="dynamic-tagline">Design. Build. Conquer Mars.</span>
-            </p>
-
-            <!-- Rotating Words Bar -->
-            <div class="hero-word-rotator mb-6 overflow-hidden h-8 flex items-center justify-center">
-                <span class="font-mono text-sm text-neon-cyan/60 tracking-widest">[&nbsp;</span>
-                <span id="rotating-word"
-                    class="font-mono text-sm text-neon-cyan tracking-widest inline-block min-w-[200px]"></span>
-                <span class="font-mono text-sm text-neon-cyan/60 tracking-widest">&nbsp;]</span>
-            </div>
-
-            <!-- CTA Buttons -->
-            <div class="hero-cta flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#register" class="primary-cta group">
-                    <span class="cta-bg"></span>
-                    <span class="relative z-10 flex items-center gap-2 font-display text-sm tracking-wider">
-                        REGISTER YOUR TEAM
-                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </span>
-                </a>
-                <a href="#mission-categories" class="secondary-cta font-display text-sm tracking-wider text-gray-500">
-                    EXPLORE MISSIONS
-                </a>
-            </div>
-
-            <!-- Countdown -->
-            <div class="hero-countdown mt-12 sm:mt-16">
-                <p class="font-mono text-xs text-gray-500 tracking-widest uppercase mb-4">Registration Deadline</p>
-                <div class="countdown-grid">
-                    <div class="countdown-block">
-                        <span id="countdown-days"
-                            class="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900">00</span>
-                        <span
-                            class="font-mono text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest mt-1">Days</span>
+            <!-- Right Side: Countdown Progress Bar -->
+            <div class="hero-countdown w-full lg:w-[45%] max-w-2xl mt-8 lg:mt-0">
+                <div
+                    class="bg-white/40 backdrop-blur-xl border border-white/50 rounded-2xl p-6 sm:p-8 shadow-2xl overflow-hidden">
+                    <div class="flex justify-between items-end mb-8">
+                        <div class="text-left">
+                            <p
+                                class="font-mono text-[10px] sm:text-xs text-gray-500 tracking-widest uppercase mb-1 whitespace-nowrap">
+                                Mission Launch</p>
+                            <p
+                                class="font-display text-sm sm:text-base font-bold text-slate-800 tracking-wider whitespace-nowrap">
+                                REGISTRATION CLOSES</p>
+                        </div>
+                        <div class="flex gap-2 sm:gap-4 text-slate-900 font-display font-bold justify-end">
+                            <div class="text-center w-12 sm:w-16"><span id="countdown-days"
+                                    class="text-2xl sm:text-3xl text-slate-900 tabular-nums inline-block w-full">00</span><span
+                                    class="text-[9px] sm:text-[10px] block text-gray-500 font-mono font-normal tracking-widest uppercase mt-1">Days</span>
+                            </div>
+                            <div class="text-center w-12 sm:w-16"><span id="countdown-hours"
+                                    class="text-2xl sm:text-3xl text-slate-900 tabular-nums inline-block w-full">00</span><span
+                                    class="text-[9px] sm:text-[10px] block text-gray-500 font-mono font-normal tracking-widest uppercase mt-1">Hrs</span>
+                            </div>
+                            <div class="text-center w-12 sm:w-16"><span id="countdown-minutes"
+                                    class="text-2xl sm:text-3xl text-slate-900 tabular-nums inline-block w-full">00</span><span
+                                    class="text-[9px] sm:text-[10px] block text-gray-500 font-mono font-normal tracking-widest uppercase mt-1">Min</span>
+                            </div>
+                            <div class="text-center w-12 sm:w-16"><span id="countdown-seconds"
+                                    class="text-2xl sm:text-3xl text-neon-orange tabular-nums inline-block w-full">00</span><span
+                                    class="text-[9px] sm:text-[10px] block text-neon-orange font-mono font-normal tracking-widest uppercase mt-1">Sec</span>
+                            </div>
+                        </div>
                     </div>
-                    <span
-                        class="countdown-separator text-neon-cyan text-xl sm:text-2xl font-light animate-pulse">:</span>
-                    <div class="countdown-block">
-                        <span id="countdown-hours"
-                            class="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900">00</span>
-                        <span
-                            class="font-mono text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest mt-1">Hours</span>
+
+                    <div class="relative w-full h-3 bg-gray-200 rounded-full mt-10 shadow-inner">
+                        <!-- The Rover Icon -->
+                        <div id="rover-icon"
+                            class="absolute top-1/2 -translate-y-[60%] -translate-x-1/2 z-20 transition-all duration-1000 ease-linear hover:scale-110 cursor-pointer group"
+                            style="left: 0%;">
+                            <div
+                                class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900 text-white text-[10px] px-3 py-1.5 rounded-full font-mono whitespace-nowrap pointer-events-none shadow-xl border border-white/10 tracking-wider">
+                                Prepare for Launch</div>
+                            <!-- Animated Rover SVG -->
+                            <svg width="48" height="36" viewBox="0 0 40 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="drop-shadow-lg rover-svg-anim">
+                                <!-- Chassis -->
+                                <rect x="8" y="10" width="24" height="8" rx="2" fill="#1e293b" />
+                                <rect x="12" y="6" width="16" height="4" rx="1" fill="#475569" />
+                                <!-- Antenna -->
+                                <line x1="24" y1="6" x2="28" y2="2" stroke="#94a3b8" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <circle cx="28" cy="2" r="1.5" fill="#ea580c" class="animate-pulse" />
+                                <!-- Wheels (grouped for rotation if needed) -->
+                                <circle cx="10" cy="20" r="4" fill="#0f172a" stroke="#64748b" stroke-width="1.5"
+                                    class="wheel-anim" />
+                                <circle cx="20" cy="20" r="4" fill="#0f172a" stroke="#64748b" stroke-width="1.5"
+                                    class="wheel-anim" />
+                                <circle cx="30" cy="20" r="4" fill="#0f172a" stroke="#64748b" stroke-width="1.5"
+                                    class="wheel-anim" />
+                                <!-- Camera Mast -->
+                                <rect x="14" y="2" width="2" height="4" fill="#94a3b8" />
+                                <rect x="13" y="1" width="4" height="3" rx="0.5" fill="#ea580c" />
+                            </svg>
+                        </div>
+                        <!-- Progress Fill -->
+                        <div id="rover-progress-fill"
+                            class="absolute top-0 left-0 h-full bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple rounded-full transition-all duration-1000 ease-linear shadow-[0_0_15px_rgba(37,99,235,0.4)]"
+                            style="width: 0%;"></div>
                     </div>
-                    <span
-                        class="countdown-separator text-neon-cyan text-xl sm:text-2xl font-light animate-pulse">:</span>
-                    <div class="countdown-block">
-                        <span id="countdown-minutes"
-                            class="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900">00</span>
-                        <span
-                            class="font-mono text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest mt-1">Mins</span>
-                    </div>
-                    <span
-                        class="countdown-separator text-neon-cyan text-xl sm:text-2xl font-light animate-pulse">:</span>
-                    <div class="countdown-block">
-                        <span id="countdown-seconds"
-                            class="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900">00</span>
-                        <span
-                            class="font-mono text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest mt-1">Secs</span>
+                    <div class="flex justify-between mt-4">
+                        <span class="font-mono text-[10px] text-gray-500 font-semibold">T-MINUS</span>
+                        <span class="font-mono text-[10px] text-gray-500 font-semibold">AUG 1, 2026</span>
                     </div>
                 </div>
             </div>
@@ -1096,109 +1141,6 @@
         </div>
     </section>
 
-    <!-- CODE OF CONDUCT SECTION -->
-    <section id="conduct" class="relative z-30 py-24 sm:py-32 bg-white border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto">
-                <div
-                    class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-sm relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-neon-cyan/5 rounded-full blur-3xl -mr-32 -mt-32">
-                    </div>
-
-                    <div class="relative z-10">
-                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-8">
-                            <div
-                                class="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100">
-                                <svg class="w-8 h-8 text-slate-800" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h2 class="font-display text-3xl font-bold text-gray-800 mb-2">Code of Conduct</h2>
-                                <p class="text-gray-400 text-sm">All participants are expected to uphold the values of
-                                    professionalism, integrity, and respect.</p>
-                            </div>
-                        </div>
-
-                        <div class="grid sm:grid-cols-2 gap-x-12 gap-y-4 mb-8">
-                            <div class="flex items-center gap-3">
-                                <div class="w-2 h-2 rounded-full bg-neon-blue"></div>
-                                <span class="text-gray-300 text-sm">Respect fellow competitors and officials</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-2 h-2 rounded-full bg-neon-blue"></div>
-                                <span class="text-gray-300 text-sm">Follow judge instructions</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-2 h-2 rounded-full bg-neon-blue"></div>
-                                <span class="text-gray-300 text-sm">Avoid unsportsmanlike behavior</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-2 h-2 rounded-full bg-neon-blue"></div>
-                                <span class="text-gray-300 text-sm">Protect competition facilities</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-2 h-2 rounded-full bg-neon-blue"></div>
-                                <span class="text-gray-300 text-sm">Maintain academic and professional integrity</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-2 h-2 rounded-full bg-neon-blue"></div>
-                                <span class="text-gray-300 text-sm">Follow all event policies</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-red-50 border border-red-100 rounded-2xl p-6 text-center">
-                            <p class="text-red-800 font-semibold mb-1">Violations may result in warnings, penalties, or
-                                disqualification.</p>
-                            <p class="text-red-600/80 text-xs">Please ensure the Official <u><a
-                                        href="https://docs.google.com/document/d/1nAl5XEtAJQb5udgHfqcTJPMl98wXMcKey6zJIa9h5WI/edit?usp=drive_link"
-                                        target="blank">rulebook</a></u> is adhered to and followed.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Competition Resources -->
-            <div class="mt-24 text-center">
-                <p class="font-mono text-xs text-neon-cyan tracking-[0.3em] uppercase mb-6">Competition Resources</p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="https://docs.google.com/document/d/1nAl5XEtAJQb5udgHfqcTJPMl98wXMcKey6zJIa9h5WI/edit?usp=drive_link"
-                        target="_blank"
-                        class="group inline-flex items-center gap-3 px-6 py-3 rounded-xl border border-slate-200 bg-white hover:border-neon-cyan/40 hover:shadow-sm transition-all duration-300">
-                        <svg class="w-5 h-5 text-neon-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        <span
-                            class="font-display text-xs text-gray-800 tracking-wider group-hover:text-neon-cyan transition-colors">RULEBOOK
-                            & GUIDELINES</span>
-                    </a>
-                    <a href="https://drive.google.com/drive/folders/1XUFxdmGZ97QTnuXzFC8Az8aBT1X-bLBK" target="_blank"
-                        class="group inline-flex items-center gap-3 px-6 py-3 rounded-xl border border-slate-200 bg-white hover:border-neon-purple/40 hover:shadow-sm transition-all duration-300">
-                        <svg class="w-5 h-5 text-neon-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                        </svg>
-                        <span
-                            class="font-display text-xs text-gray-800 tracking-wider group-hover:text-neon-purple transition-colors">RESOURCE
-                            DRIVE</span>
-                    </a>
-                    <a href="/faq.html" target="_blank"
-                        class="group inline-flex items-center gap-3 px-6 py-3 rounded-xl border border-slate-200 bg-white hover:border-neon-orange/40 hover:shadow-sm transition-all duration-300">
-                        <svg class="w-5 h-5 text-neon-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span
-                            class="font-display text-xs text-gray-800 tracking-wider group-hover:text-neon-orange transition-colors">FAQ</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- SPONSORS / PARTNERS SECTION -->
     <section id="sponsors" class="relative z-30 py-24 sm:py-32 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1211,29 +1153,37 @@
                 <div class="w-24 h-1 bg-gradient-to-r from-neon-cyan to-neon-blue mx-auto rounded-full"></div>
             </div>
 
-            <div class="flex gap-2 justify-center mb-16">
+            <div class="flex flex-wrap gap-4 sm:gap-6 justify-center mb-16">
                 <div
-                    class="sponsor-card p-8 rounded-xl border border-white/5 bg-white/[0.02] flex items-center justify-center min-h-[120px] w-48">
-                    <div class="text-center">
-                        <img src="./assets/images/risa.png" alt="RISA" class="h-25 w-auto mx-auto mb-2 rounded">
-                        <p class="font-display text-xl font-bold text-slate-900 tracking-wider">RISA</p>
-                        <p class="font-mono text-[10px] text-gray-500 mt-1">Organising Community</p>
+                    class="sponsor-card p-6 sm:p-8 rounded-xl border border-white/5 bg-white/[0.02] flex flex-col items-center justify-center min-h-[160px] w-48 hover:bg-white/[0.04] transition-colors">
+                    <div class="text-center w-full">
+                        <div class="h-16 flex items-center justify-center mb-4">
+                            <img src="./assets/images/risa.png" alt="RISA" class="max-h-full max-w-full rounded">
+                        </div>
+                        <br>
+                        <p class="font-display text-xl font-bold tracking-wider">RISA</p>
+                        <p class="font-mono text-[10px] text-gray-400 mt-1 uppercase tracking-widest">Organising
+                            Community</p>
                     </div>
                 </div>
                 <div
-                    class="sponsor-card p-8 rounded-xl border border-white/5 bg-white/[0.02] flex items-center justify-center min-h-[120px] w-48">
-                    <div class="text-center">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQyF91oEO_gPfTdEySx3Sjma-KdiVgl5k-SsI_r-FD_A&s"
-                            alt="MACE" class="h-15 w-auto mx-auto mb-2 rounded">
-                        <p class="font-display text-xl font-bold text-slate-900 tracking-wider">MACE</p>
-                        <p class="font-mono text-[10px] text-gray-500 mt-1">Host Institution</p>
+                    class="sponsor-card p-6 sm:p-8 rounded-xl border border-white/5 bg-white/[0.02] flex flex-col items-center justify-center min-h-[160px] w-48 hover:bg-white/[0.04] transition-colors">
+                    <div class="text-center w-full">
+                        <div class="h-16 flex items-center justify-center mb-4">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQyF91oEO_gPfTdEySx3Sjma-KdiVgl5k-SsI_r-FD_A&s"
+                                alt="MACE" class="max-h-full max-w-full rounded">
+                        </div>
+                        <br>
+                        <p class="font-display text-xl font-bold tracking-wider">MACE</p>
+                        <p class="font-mono text-[10px] text-gray-400 mt-1 uppercase tracking-widest">Host Institution
+                        </p>
                     </div>
                 </div>
             </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="relative z-30 border-t border-white/5 backdrop-blur-xl">
+    <footer class="relative z-30 border-t border-white/5 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid md:grid-cols-4 gap-12">
                 <!-- Brand -->
@@ -1241,13 +1191,13 @@
                     <div class="flex items-center gap-3 mb-6">
                         <img src="assets/images/logo.png" alt="ASRC Logo" class="h-10 w-auto">
                         <div>
-                            <p class="font-display text-sm font-bold text-slate-900 leading-none tracking-wider">ASIAN
+                            <p class="font-display text-sm font-bold text-white leading-none tracking-wider">ASIAN
                                 ROVER</p>
                             <p class="font-display text-xs text-neon-cyan tracking-[0.25em]">CHALLENGE 2026</p>
                         </div>
                     </div>
-                    <h4>Where Tomorrow's Robotics Leaders Begin</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed max-w-md mb-6 mt-2">
+                    <h4 class="text-white font-semibold mb-2">Where Tomorrow's Robotics Leaders Begin</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-md mb-6">
                         The Robotic Systems Integrators Association (RISA) is an international robotics organization
                         fostering excellence in engineering, autonomous systems, and space technologies. By organizing
                         global competitions, educational initiatives, research collaborations, and innovation programs,
@@ -1256,14 +1206,14 @@
                         <br><br>Whether you're building your first robot or preparing for the next Mars mission, RISA is
                         where innovation finds its community.
                     </p>
-                    <div class="flex items-center gap-4">
-                        <a href="#" class="social-link" aria-label="LinkedIn">
+                    <div class="flex items-center gap-4 text-gray-300">
+                        <a href="#" class="social-link text hover:text-white transition-colors" aria-label="LinkedIn">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
+                        <a href="#" class="social-link hover:text-white transition-colors" aria-label="YouTube">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -1272,7 +1222,7 @@
                     </div>
 
                     <div class="mt-8">
-                        <p class="font-display text-xs font-bold text-slate-900 tracking-wider mb-3">SUPPORTED BY</p>
+                        <p class="font-display text-xs font-bold text-white tracking-wider mb-3">SUPPORTED BY</p>
                         <div class="flex items-center gap-4">
                             <a href="https://joinrisa.org" target="_blank"
                                 class="block transition-transform hover:scale-105">
@@ -1291,31 +1241,31 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="font-display text-sm font-bold text-slate-900 tracking-wider mb-6">QUICK LINKS</h4>
+                    <h4 class="font-display text-sm font-bold text-white tracking-wider mb-6">QUICK LINKS</h4>
                     <ul class="space-y-3">
-                        <li><a href="#about" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">About
+                        <li><a href="#about" class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">About
                                 ASRC</a></li>
                         <li><a href="#challenges"
-                                class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">ASRC Challenge</a>
+                                class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">ASRC Challenge</a>
                         </li>
                         <li><a href="https://www.joinrisa.org"
-                                class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">About RISA</a></li>
+                                class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">About RISA</a></li>
                         <li><a href="https://mace.ac.in"
-                                class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">About MACE</a></li>
+                                class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">About MACE</a></li>
                         <li><a href="#register"
-                                class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">Register</a></li>
-                        <li><a href="#" class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">Join The
+                                class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">Register</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">Join The
                                 Dicord</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact -->
                 <div>
-                    <h4 class="font-display text-sm font-bold text-slate-900 tracking-wider mb-6">CONTACT</h4>
+                    <h4 class="font-display text-sm font-bold text-white tracking-wider mb-6">CONTACT</h4>
                     <ul class="space-y-3">
                         <li>
                             <a href="mailto:contact@asrc.space"
-                                class="text-gray-500 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                class="text-gray-400 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -1324,7 +1274,7 @@
                             </a>
                         </li>
                         <li>
-                            <span class="text-gray-500 text-sm flex items-center gap-2">
+                            <span class="text-gray-400 text-sm flex items-center gap-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -1336,7 +1286,7 @@
                         </li>
                         <li>
                             <a href="https://joinrisa.org" target="_blank"
-                                class="text-gray-500 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                class="text-gray-400 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                         d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -1347,20 +1297,20 @@
                     </ul>
                     <br>
                     <div>
-                        <h4 class="font-display text-sm font-bold text-slate-900 tracking-wider mb-6">Pages</h4>
+                        <h4 class="font-display text-sm font-bold text-white tracking-wider mb-6">Pages</h4>
                         <ul class="space-y-3">
                             <li><a href="/"
-                                    class="text-gray-500 text-sm hover:text-neon-cyan transition-colors">Home</a></li>
+                                    class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">Home</a></li>
 
                             <li>
                                 <a href="terms.html"
-                                    class="text-gray-500 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                    class="text-gray-400 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
                                     Terms & Conditions
                                 </a>
                             </li>
                             <li>
                                 <a href="privacy.html"
-                                    class="text-gray-500 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                    class="text-gray-400 text-sm hover:text-neon-cyan transition-colors flex items-center gap-2">
                                     Privacy Policy
                                 </a>
                             </li>
@@ -1374,8 +1324,8 @@
         <div class="border-t border-white/5 py-6">
             <div
                 class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-gray-600 text-xs font-mono">© 2026 Asian Rover Challenge. All rights reserved.</p>
-                <p class="text-gray-700 text-xs font-mono">Hosted at MACE Kothamangalam • Powered by Srishti</p>
+                <p class="text-gray-500 text-xs font-mono">© 2026 Asian Rover Challenge. All rights reserved.</p>
+                <p class="text-gray-500 text-xs font-mono">Hosted at MACE Kothamangalam • Powered by Srishti</p>
             </div>
         </div>
     </footer>
