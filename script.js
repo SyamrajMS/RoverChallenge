@@ -698,7 +698,7 @@ function onPlayerReady(event) {
     try {
         const iframe = event.target.getIframe();
         if (iframe) {
-            const item = iframe.closest('.video-item');
+            const item = iframe.closest('.video-item-3d');
             if (!item || !item.classList.contains('active')) {
                 event.target.pauseVideo();
             } else {
