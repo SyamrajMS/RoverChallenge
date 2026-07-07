@@ -8,9 +8,6 @@
     <meta name="description"
         content="Asian Rover Challenge 2026 - International Space Robotics Competition hosted at MACE Kothamangalam. Design, build, and operate next-generation Mars rovers.">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
-
     <!-- Tailwind CSS (built) -->
     <link rel="stylesheet" href="dist/output.css">
 
@@ -381,234 +378,25 @@
             </div>
         </div>
 
-        <div class="carousel-viewport-yt relative h-screen w-full flex flex-col items-center justify-center gap-10 overflow-hidden">
-
-            <div class="relative w-full flex items-center justify-center" style="height: min(62vh, 520px);">
-                <!-- Video 1 -->
-                <div class="yt-card-3d" id="yt-card-0">
-                    <div class="ambient-glow-yt"></div>
-                    <div id="yt-player-1" data-video-id="O0FOzPaF9oY" class="w-full h-full pointer-events-none"></div>
-                </div>
-                <!-- Video 2 -->
-                <div class="yt-card-3d" id="yt-card-1">
-                    <div class="ambient-glow-yt"></div>
-                    <div id="yt-player-2" data-video-id="i6gLlENt6YU" class="w-full h-full pointer-events-none"></div>
-                </div>
-                <!-- Video 3 -->
-                <div class="yt-card-3d" id="yt-card-2">
-                    <div class="ambient-glow-yt"></div>
-                    <div id="yt-player-3" data-video-id="C98zKFM3Vf4" class="w-full h-full pointer-events-none"></div>
-                </div>
-                <!-- Video 4 -->
-                <div class="yt-card-3d" id="yt-card-3">
-                    <div class="ambient-glow-yt"></div>
-                    <div id="yt-player-4" data-video-id="qRwe0EjqWpA" class="w-full h-full pointer-events-none"></div>
-                </div>
-            </div>
-
-            <div class="flex flex-col items-center gap-4">
-                <div class="flex gap-2" id="yt-gallery-dashes">
-                    <span class="yt-gallery-dash w-8 h-1.5 rounded-full bg-neon-cyan transition-all duration-300"></span>
-                    <span class="yt-gallery-dash w-3 h-1.5 rounded-full bg-slate-300 transition-all duration-300"></span>
-                    <span class="yt-gallery-dash w-3 h-1.5 rounded-full bg-slate-300 transition-all duration-300"></span>
-                    <span class="yt-gallery-dash w-3 h-1.5 rounded-full bg-slate-300 transition-all duration-300"></span>
-                </div>
-                <button onclick="toggleYTGalleryMute()" id="ytGalleryMuteBtn"
-                    class="flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 bg-white/80 hover:bg-white transition-all text-xs font-mono uppercase tracking-widest text-slate-700 shadow-sm">
-                    <svg id="ytGalleryMuteIconSvg" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M17 14l2 2m0 0l2 2m-2-2l2-2m-2 2l-2 2M3 9v6h4l5 5V4L7 9H3z" />
-                    </svg>
-                    <span id="ytGalleryMuteText">Unmute</span>
-                </button>
-                <p class="font-mono text-[10px] text-slate-400 tracking-widest uppercase">Scroll to move through the reel</p>
-            </div>
-        </div>
+<div class="video-gallery-container carousel-viewport relative w-full h-[70vh] flex items-center justify-center">
+    <div class="video-item-3d" id="video-card-1" data-video-id="O0FOzPaF9oY">
+        <div class="ambient-glow"></div>
+        <div id="yt-player-1" class="w-full h-full pointer-events-none"></div>
+    </div>
+    <div class="video-item-3d" id="video-card-2" data-video-id="i6gLlENt6YU">
+        <div class="ambient-glow"></div>
+        <div id="yt-player-2" class="w-full h-full pointer-events-none"></div>
+    </div>
+    <div class="video-item-3d" id="video-card-3" data-video-id="C98zKFM3Vf4">
+        <div class="ambient-glow"></div>
+        <div id="yt-player-3" class="w-full h-full pointer-events-none"></div>
+    </div>
+    <div class="video-item-3d" id="video-card-4" data-video-id="qRwe0EjqWpA">
+        <div class="ambient-glow"></div>
+        <div id="yt-player-4" class="w-full h-full pointer-events-none"></div>
+    </div>
+</div>
     </section>
-
-    <style>
-        .carousel-viewport-yt { perspective: 1600px; }
-        .yt-card-3d {
-            position: absolute;
-            width: min(85vw, 820px);
-            aspect-ratio: 16 / 9;
-            border-radius: 1.25rem;
-            overflow: hidden;
-            background: #0f172a;
-            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-            will-change: transform, opacity;
-            pointer-events: none;
-            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5);
-        }
-        .yt-card-3d.prev {
-            transform: translateX(-72%) scale(0.8) rotateY(12deg);
-            opacity: 0.35;
-            z-index: 10;
-        }
-        .yt-card-3d.active {
-            transform: translateX(0) scale(1) rotateY(0deg);
-            opacity: 1;
-            z-index: 30;
-            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px -5px rgba(59, 130, 246, 0.25);
-        }
-        .yt-card-3d.next {
-            transform: translateX(72%) scale(0.8) rotateY(-12deg);
-            opacity: 0.35;
-            z-index: 10;
-        }
-        .yt-card-3d.hidden-card {
-            opacity: 0;
-            transform: scale(0.7);
-            z-index: 0;
-        }
-        .ambient-glow-yt {
-            position: absolute;
-            inset: -20px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, transparent 70%);
-            filter: blur(40px);
-            opacity: 0;
-            transition: opacity 0.8s ease;
-            z-index: -1;
-            pointer-events: none;
-        }
-        .yt-card-3d.active .ambient-glow-yt { opacity: 1; }
-    </style>
-
-    <script>
-        (function () {
-            const total = 4;
-            let activeIndex = 0;
-            let ytPlayers = [];
-            let playersReady = false;
-            let isMutedYT = true;
-            let scrollTriggerInstance = null;
-
-            const cardIds = ['yt-card-0', 'yt-card-1', 'yt-card-2', 'yt-card-3'];
-            const playerIds = ['yt-player-1', 'yt-player-2', 'yt-player-3', 'yt-player-4'];
-
-            // Load the YouTube IFrame API once
-            const ytScriptTag = document.createElement('script');
-            ytScriptTag.src = "https://www.youtube.com/iframe_api";
-            document.head.appendChild(ytScriptTag);
-
-            window.onYouTubeIframeAPIReady = function () {
-                let readyCount = 0;
-                playerIds.forEach((id, i) => {
-                    const el = document.getElementById(id);
-                    if (!el) return;
-                    const videoId = el.dataset.videoId;
-                    ytPlayers[i] = new YT.Player(id, {
-                        videoId: videoId,
-                        playerVars: {
-                            autoplay: 0,
-                            mute: 1,
-                            controls: 1,
-                            rel: 0,
-                            playsinline: 1,
-                            modestbranding: 1
-                        },
-                        events: {
-                            onReady: function () {
-                                readyCount++;
-                                if (readyCount === total) {
-                                    playersReady = true;
-                                    updateCarouselVisual();
-                                    initGalleryScrollTrigger();
-                                }
-                            }
-                        }
-                    });
-                });
-            };
-
-            function updateCarouselVisual() {
-                const prevIndex = (activeIndex - 1 + total) % total;
-                const nextIndex = (activeIndex + 1) % total;
-
-                cardIds.forEach((id, i) => {
-                    const card = document.getElementById(id);
-                    if (!card) return;
-                    card.classList.remove('prev', 'active', 'next', 'hidden-card');
-                    // Restore pointer events for click targets, cards themselves stay non-interactive except active
-                    if (i === activeIndex) {
-                        card.classList.add('active');
-                        card.style.pointerEvents = 'auto';
-                    } else if (i === prevIndex) {
-                        card.classList.add('prev');
-                        card.style.pointerEvents = 'none';
-                    } else if (i === nextIndex) {
-                        card.classList.add('next');
-                        card.style.pointerEvents = 'none';
-                    } else {
-                        card.classList.add('hidden-card');
-                        card.style.pointerEvents = 'none';
-                    }
-                });
-
-                document.querySelectorAll('.yt-gallery-dash').forEach((dash, i) => {
-                    if (i === activeIndex) {
-                        dash.className = 'yt-gallery-dash w-8 h-1.5 rounded-full bg-neon-cyan transition-all duration-300';
-                    } else {
-                        dash.className = 'yt-gallery-dash w-3 h-1.5 rounded-full bg-slate-300 transition-all duration-300';
-                    }
-                });
-            }
-
-            function playActiveVideo() {
-                if (!playersReady) return;
-                ytPlayers.forEach((p, i) => {
-                    if (!p || typeof p.playVideo !== 'function') return;
-                    if (i === activeIndex) {
-                        if (isMutedYT) { p.mute(); } else { p.unMute(); }
-                        p.playVideo();
-                    } else {
-                        p.pauseVideo();
-                    }
-                });
-            }
-
-            function pauseAllVideos() {
-                if (!playersReady) return;
-                ytPlayers.forEach(p => {
-                    if (p && typeof p.pauseVideo === 'function') p.pauseVideo();
-                });
-            }
-
-            function initGalleryScrollTrigger() {
-                if (typeof ScrollTrigger === 'undefined') return;
-
-                scrollTriggerInstance = ScrollTrigger.create({
-                    trigger: "#video-gallery",
-                    start: "top top",
-                    end: "+=" + (window.innerHeight * total),
-                    pin: true,
-                    scrub: 0.6,
-                    onUpdate: (self) => {
-                        const idx = Math.min(total - 1, Math.floor(self.progress * total));
-                        if (idx !== activeIndex) {
-                            activeIndex = idx;
-                            updateCarouselVisual();
-                            playActiveVideo();
-                        }
-                    },
-                    onEnter: () => playActiveVideo(),
-                    onEnterBack: () => playActiveVideo(),
-                    onLeave: () => pauseAllVideos(),
-                    onLeaveBack: () => pauseAllVideos()
-                });
-            }
-
-            window.toggleYTGalleryMute = function () {
-                isMutedYT = !isMutedYT;
-                ytPlayers.forEach(p => {
-                    if (!p) return;
-                    if (isMutedYT) { p.mute && p.mute(); } else { p.unMute && p.unMute(); }
-                });
-                const text = document.getElementById('ytGalleryMuteText');
-                if (text) text.textContent = isMutedYT ? 'Unmute' : 'Mute';
-            };
-        })();
-    </script>
 
     <!-- Prize Pool Section -->
     <div
