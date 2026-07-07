@@ -670,13 +670,14 @@ window.onYouTubeIframeAPIReady = function() {
     ytReady = true;
     const playerDivs = document.querySelectorAll('[id^="yt-player-"]');
     playerDivs.forEach((div, index) => {
-        const videoId = div.getAttribute('data-video-id');
+        const card = div.closest('.video-item-3d');
+        const videoId = card ? card.getAttribute('data-video-id') : div.getAttribute('data-video-id');
         const player = new YT.Player(div.id, {
             height: '100%',
             width: '100%',
             videoId: videoId,
             playerVars: {
-                'rel': 0, // Disable recommendations
+                'rel': 0,
                 'playsinline': 1,
                 'modestbranding': 1
             },
@@ -688,7 +689,6 @@ window.onYouTubeIframeAPIReady = function() {
         ytPlayers.push(player);
     });
 };
-
 function onPlayerReady(event) {
     if (typeof event.target.setPlaybackQuality === 'function') {
         event.target.setPlaybackQuality('medium'); // 360p
