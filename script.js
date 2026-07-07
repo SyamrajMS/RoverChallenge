@@ -772,11 +772,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setActiveCard(0);
 
-    ScrollTrigger.create({
-        trigger: gallerySection,
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: 1,
+ScrollTrigger.create({
+    trigger: gallerySection,
+    start: 'top 80px',
+    end: 'bottom bottom',
+    scrub: 1,
         onUpdate: (self) => {
             const idx = Math.round(self.progress * (cards.length - 1));
             if (idx !== activeIndex) setActiveCard(idx);
